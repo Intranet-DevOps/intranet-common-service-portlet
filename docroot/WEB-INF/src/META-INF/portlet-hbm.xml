@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="sg.com.para.intranet.common.services.model.Attachment" />
+	<import class="sg.com.para.intranet.common.services.model.Employee" />
+	<import class="sg.com.para.intranet.common.services.model.Project" />
+	<class name="sg.com.para.intranet.common.services.model.impl.AttachmentImpl" table="intranet_attachment">
+		<cache usage="read-write" />
+		<id name="attachmentId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="entityType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="entityId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="attachmentText" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="sg.com.para.intranet.common.services.model.impl.EmployeeImpl" table="intranet_employee">
+		<cache usage="read-write" />
+		<id name="employeeId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="screenName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="joinDate" type="org.hibernate.type.TimestampType" />
+		<property name="leaveDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="sg.com.para.intranet.common.services.model.impl.ProjectImpl" table="intranet_project">
+		<cache usage="read-write" />
+		<id name="projectId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

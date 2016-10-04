@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="sg.com.para.intranet.common.services.model.impl.AttachmentModelImpl">
+		<attributes>
+			<id name="attachmentId" />
+			<basic name="entityType" />
+			<basic name="entityId" />
+			<basic name="attachmentText" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="sg.com.para.intranet.common.services.model.impl.EmployeeModelImpl">
+		<attributes>
+			<id name="employeeId" />
+			<basic name="screenName" />
+			<basic name="joinDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="leaveDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="sg.com.para.intranet.common.services.model.impl.ProjectModelImpl">
+		<attributes>
+			<id name="projectId" />
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="sg.com.para.intranet.common.services.model.impl.AttachmentImpl" name="Attachment">
+		<table name="intranet_attachment" />
+		<attributes />
+	</entity>
+	<entity class="sg.com.para.intranet.common.services.model.impl.EmployeeImpl" name="Employee">
+		<table name="intranet_employee" />
+		<attributes />
+	</entity>
+	<entity class="sg.com.para.intranet.common.services.model.impl.ProjectImpl" name="Project">
+		<table name="intranet_project" />
+		<attributes />
+	</entity>
+</entity-mappings>

@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-<service-builder package-path="com.liferay.sample">
-	<author>fernando</author>
-	<namespace>SAMPLE</namespace>
+<service-builder package-path="sg.com.para.intranet.common.services">
+	<author>Fernando Karnagi</author>
+	<namespace>intranetcommon</namespace>
+	<entity name="Employee" local-service="true" remote-service="true"
+		table="intranet_employee">
+		<column name="employeeId" type="int" primary="true"></column>
+		<column name="screenName" type="String"></column>
+		<column name="joinDate" type="Date"></column>
+		<column name="leaveDate" type="Date"></column>
+	</entity>
+	<entity name="Project" local-service="true" remote-service="true"
+		table="intranet_project">
+		<column name="projectId" type="int" primary="true"></column>
+		<column name="code" type="String"></column>
+		<column name="description" type="String"></column>
+	</entity>
+	<entity name="Attachment" local-service="true" remote-service="true"
+		table="intranet_attachment">
+		<column name="attachmentId" type="int" primary="true"></column>
+		<column name="entityType" type="String"></column>
+		<column name="entityId" type="int"></column> 
+		<column name="attachmentText" type="String"></column> 
+	</entity>
 
-	
 </service-builder>
